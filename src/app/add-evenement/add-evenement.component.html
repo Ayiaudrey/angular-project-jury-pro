@@ -1,0 +1,45 @@
+<!-- <p>add-evenement works!</p> -->
+<div class="container">
+  <div>
+    <h2>Ajouter un Evenement : </h2>
+  </div>
+  <form >
+    <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Evenement</label>
+    <input type="number" [(ngModel)]= "newEvenement.evenement_id"
+          name="evenementId" class="form-control">
+     </div> -->
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom</label>
+    <input type="text"[(ngModel)]= "newEvenement.evenement_nom"
+    name="evenement_nom" class="form-control">
+    </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Type</label>
+      <select type="text"[(ngModel)]= "newEvenement.evenement_type"
+      name="evenement_nom" class="form-control">
+      <option >Candidat</option>
+      <option >Groupe</option>
+    </select>
+      </div>
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date de debut</label>
+    <input type="date" [(ngModel)]= "newEvenement.evenement_date_debut"
+    name="evenement_date_debut" class="form-control">
+      </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+    <label >Date de fin</label>
+    <input type="date" [(ngModel)]= "newEvenement.evenement_date_fin"
+    name="evenement_date_debut" class="form-control">
+          </div>
+
+    <div class="mt-2">
+       <button type="submit"  (click)="addEvenement()" class="btn btn-success">Ajouter</button>
+    </div>
+    <!-- <div class="mt-2">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+   </div> -->
+    </form>
+    </div>

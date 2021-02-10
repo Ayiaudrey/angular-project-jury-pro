@@ -1,0 +1,26 @@
+<p></p>
+<div class= "container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr> <th> Id</th><th> Type</th> <th>Nom</th> <th>Date_debut</th> <th>Date_fin</th> <th>Participants</th> </tr>
+            <tbody *ngFor = "let event of evenement">
+              <tr>
+                <td>{{event.evenement_id}}</td>
+                <td>{{event.evenement_type}}</td>
+                <td>{{event.evenement_nom}}</td>
+                <td>{{event.evenement_date_debut | date:"dd/MM/yyyy" }}</td>
+                <td>{{event.evenement_date_fin  | date:"dd/MM/yyyy" }}</td>
+                <td>{{event.participant}}</td>
+                <td><a class="btn btn-danger" (click)="supprimerEvenement(event)">Supprimer</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/updateEvenement',event.evenement_id]">Modifier</a></td>
+              </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+

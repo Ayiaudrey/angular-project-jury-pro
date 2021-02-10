@@ -1,0 +1,35 @@
+<div class="container">
+
+<div>
+  <h2>Modifier un Evenement :</h2>
+</div>
+<form>
+  <div class="col-sm-2 col-md-2 col-lg-2"> <label>ID</label>
+      <input type="number"
+          [(ngModel)]="currentEvenement.evenement_id" name="evenement_id" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4"> <label>Nom Evenement</label> <input type="text"
+          [(ngModel)]="currentEvenement.evenement_nom" name="evenement_nom" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4"> <label>Type Evenement</label>
+      <select type="text"
+          [(ngModel)]="currentEvenement.evenement_type" name="evenement_type" class="form-control">
+          <option>Candidat</option>
+          <option>Groupe</option>
+      </select>
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4"> <label>Date de debut</label> <input type="date"
+          [ngModel]="currentEvenement.evenement_date_debut | date: 'yyyy-MM-dd'"
+          (ngModelChange)="currentEvenement.evenement_date_debut= $event" name="evenement_date_debut" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4"> <label>Date de fin</label> <input type="date"
+          [ngModel]="currentEvenement.evenement_date_fin | date: 'yyyy-MM-dd'"
+          (ngModelChange)=" currentEvenement.evenement_date_fin= $event" name="evenement_date_fin" class="form-control">
+  </div>
+
+
+<div class="mt-2">
+      <button type="submit" (click)="updateEvenement()" class="btn btn-success">Modifier</button>
+  </div>
+</form>
+</div>
