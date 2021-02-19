@@ -3,12 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EvenementComponent } from './evenement/evenement.component';
 import {HttpClientModule} from '@angular/common/http';
 import { UpdateEvenementComponent } from './update-evenement/update-evenement.component';
 import { AddEvenementComponent } from './add-evenement/add-evenement.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { AdminComponent } from './admin/admin.component';
+import { EvenementComponent } from './evenement/evenement.component';
+import { CandidatComponent } from './CandidatD/Candidat/candidat.component';
+import { AddCandidatComponent } from './CandidatD/add-candidat/add-candidat.component';
+import { UpdateCandidatComponent } from './CandidatD/update-candidat/update-candidat.component';
+import { VoterComponent } from './voter/voter.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { AdminComponent } from './admin/admin.component';
     UpdateEvenementComponent,
     AddEvenementComponent,
     ConnexionComponent,
-    AdminComponent
+    CandidatComponent,
+    AddCandidatComponent,
+    UpdateCandidatComponent,
+    VoterComponent,
+    // AdminComponent
   ],
   imports: [
     BrowserModule,

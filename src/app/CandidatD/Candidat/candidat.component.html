@@ -1,0 +1,38 @@
+<p></p>
+<div class= "container-fluid">
+  <div class="card  shadow mb-4 ">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+          <th> Id</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Email</th>
+          <th>evenement_id</th>
+          <th>Telephone</th>
+          <th>Code</th>
+          <th>  Photo</th>
+          <th></th>
+          <th>Action</th>
+        </tr>
+            <tbody *ngFor = "let candid of candidat">
+              <tr>
+                <td>{{candid.candidat_id}}</td>
+                <td>{{candid.candidat_nom}}</td>
+                <td >{{candid.candidat_prenom}}</td>
+                <td>{{candid.candidat_email}}</td>
+                <td>{{candid.event_id}}</td>
+                <td>{{candid.candidat_telephone}}</td>
+                <td>{{candid.candidat_code}}</td>
+
+                <td> <img width="100" [src]="imageSrc(candid.candidat_photo)" alt=""> </td>
+                 <!-- <td> <img width="100" [src]="'data:image/png;base64,' + candid.candidat_photo" alt=""> </td> -->
+
+                 <td><a class="btn btn-danger" (click)="supprimerCandidat(candid)">Supprimer</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/updateCandidat',candid.event_id]">Modifier</a></td>
+              </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>

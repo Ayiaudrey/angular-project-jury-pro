@@ -13,10 +13,10 @@ export class AdminComponent implements OnInit {
 
   ngOnInit():  void {}
 
-    deconnecter(){
-      this.authService.deconnecter();
-      this.router.navigateByUrl('/connexion');
+  //   deconnecter(){
+  //     this.authService.deconnecter();
+  //     this.router.navigateByUrl('/connexion');
 
-  }
+  // }
 
 }

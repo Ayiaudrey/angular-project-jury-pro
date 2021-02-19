@@ -4,10 +4,10 @@
   <h2>Modifier un Evenement :</h2>
 </div>
 <form>
-  <div class="col-sm-2 col-md-2 col-lg-2"> <label>ID</label>
+
       <input type="number"
-          [(ngModel)]="currentEvenement.evenement_id" name="evenement_id" class="form-control">
-  </div>
+          [(ngModel)]="currentEvenement.evenement_id" name="evenement_id" hidden class="form-control">
+  
   <div class="col-sm-4 col-md-4 col-lg-4"> <label>Nom Evenement</label> <input type="text"
           [(ngModel)]="currentEvenement.evenement_nom" name="evenement_nom" class="form-control">
   </div>
@@ -27,7 +27,19 @@
           (ngModelChange)=" currentEvenement.evenement_date_fin= $event" name="evenement_date_fin" class="form-control">
   </div>
 
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Photo</label>
+        <input #monImage type="file" (change)="onImageSelected($event)">
 
+    </div>
+
+    <div class="form-group col-md-6">
+        <img [src]="imgUrl" height="200" width="200" *ngIf="imgUrl">
+
+    </div>
+
+</div>
 <div class="mt-2">
       <button type="submit" (click)="updateEvenement()" class="btn btn-success">Modifier</button>
   </div>

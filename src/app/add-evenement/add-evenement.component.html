@@ -34,7 +34,19 @@
     <input type="date" [(ngModel)]= "newEvenement.evenement_date_fin"
     name="evenement_date_debut" class="form-control">
           </div>
+    <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Photo</label>
+                <input #monImage type="file" (change)="onImageSelected($event)">
 
+            </div>
+
+            <div class="form-group col-md-6">
+                <img [src]="imgUrl" height="200" width="200" *ngIf="imgUrl">
+
+            </div>
+
+        </div>
     <div class="mt-2">
        <button type="submit"  (click)="addEvenement()" class="btn btn-success">Ajouter</button>
     </div>

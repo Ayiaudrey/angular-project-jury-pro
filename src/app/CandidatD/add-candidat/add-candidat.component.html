@@ -1,0 +1,67 @@
+
+<!-- <p>add-evenement works!</p> -->
+<div class="container">
+  <div>
+    <h2>Ajouter un Candidat : </h2>
+  </div>
+  <form >
+    <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Evenement</label>
+    <input type="number" [(ngModel)]= "newEvenement.evenement_id"
+          name="evenementId" class="form-control">
+     </div> -->
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom</label>
+    <input type="text"[(ngModel)]= "newCandidat.candidat_nom"
+    name="candidat_nom" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Prenom</label>
+      <input type="text"[(ngModel)]= "newCandidat.candidat_prenom"
+      name="candidat_prenom" class="form-control">
+      </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+          <label >Email</label>
+          <input type="text"[(ngModel)]= "newCandidat.candidat_email"
+          name="candidat_email" class="form-control">
+          </div>
+
+
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <label >Nom Evenement</label>
+              <select [(ngModel)]= "newCandidat.event_id" name="evenement_nom" class="form-control">
+              <option  *ngFor = "let candid of evenement" [value] = "candid.evenement_id"> {{candid.evenement_nom}}</option>
+            </select>
+              </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <label >Telephone</label>
+              <input type="text"[(ngModel)]= "newCandidat.candidat_telephone"
+              name="candidat_telephone" class="form-control">
+              </div>
+              <div class="col-sm-4 col-md-4 col-lg-4" >
+                <label >Code du Candidat</label>
+                <input type="text"[(ngModel)]= "newCandidat.candidat_code"
+                name="candidat_code" class="form-control">
+                </div>
+    <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Photo</label>
+                <input #monImage type="file" (change)="onImageSelected($event)">
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <img [src]="imgUrl" height="200" width="200" *ngIf="imgUrl">
+
+            </div>
+
+        </div>
+    <div class="mt-2">
+       <button type="submit"  (click)="addCandidat()" class="btn btn-success">Ajouter</button>
+    </div>
+    <!-- <div class="mt-2">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+   </div> -->
+    </form>
+    </div>

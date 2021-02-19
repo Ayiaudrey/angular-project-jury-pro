@@ -1,0 +1,64 @@
+<!-- <p>add-evenement works!</p> -->
+<div class="container">
+  <div>
+    <h2>Modifier un Candidat : </h2>
+  </div>
+  <form >
+    <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Evenement</label>
+    <input type="number" [(ngModel)]= "newEvenement.evenement_id"
+          name="evenementId" class="form-control">
+     </div> -->
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom</label>
+    <input type="text"[(ngModel)]= "currentCandidat.candidat_nom"
+    name="candidat_nom" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Prenom</label>
+      <input type="text"[(ngModel)]= "currentCandidat.candidat_prenom"
+      name="candidat_prenom" class="form-control">
+      </div>
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+          <label >Email</label>
+          <input type="text"[(ngModel)]= "currentCandidat.candidat_email"
+          name="candidat_email" class="form-control">
+          </div>
+          <div hidden class="col-sm-4 col-md-4 col-lg-4" >
+            <label >Evenement_id</label>
+            <input type="text"[(ngModel)]= "currentCandidat.event_id"
+            name="evenement_id"  class="form-control">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <label >Telephone</label>
+              <input type="text"[(ngModel)]= "currentCandidat.candidat_telephone"
+              name="candidat_telephone" class="form-control">
+              </div>
+              <div class="col-sm-4 col-md-4 col-lg-4" >
+                <label >Code du Candidat</label>
+                <input type="text"[(ngModel)]= "currentCandidat.candidat_code"
+                name="candidat_code" class="form-control">
+                </div>
+    <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Photo</label>
+                <input #monImage type="file" (change)="onImageSelected($event)">
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <img [src]="imgUrl" height="200" width="200" *ngIf="imgUrl">
+
+            </div>
+
+        </div>
+    <div class="mt-2">
+       <button type="submit"  (click)="updateCandidat()" class="btn btn-success">Modifier</button>
+    </div>
+    <!-- <div class="mt-2">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+   </div> -->
+    </form>
+    </div>
+
+

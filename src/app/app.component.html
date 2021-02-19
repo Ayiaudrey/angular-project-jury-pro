@@ -4,23 +4,56 @@
  <a class="navbar-brand" href="#">Jury_pro</a>
 
 
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Menu</a>
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Menu</a>
+      <div class="dropdown-menu">
+
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Evenement
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/evenement">Lister</a>
+              <a class="dropdown-item" routerLink="/AddEvenement">Ajouter</a>
+            </div>
+          </li>
+        </a>
+
+        <a class="dropdown-item" routerLink="">Candidat</a>
+        <a class="dropdown-item" routerLink="">Jury</a>
+        <a class="dropdown-item" routerLink="">Critère</a>
+        <a class="dropdown-item" routerLink="">Vote_groupe</a>
+        <a class="dropdown-item" routerLink="">Vote_candidat</a>
+        <a class="dropdown-item" routerLink="">Groupe_candidat</a>
+        <a class="dropdown-item" routerLink="">Groupe</a>
+      </div>
+
     </li>
 
 
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Evenement
-      </a>
+        Evenement</a>
+
       <div class="dropdown-menu">
         <a class="dropdown-item" routerLink="/evenement">Lister</a>
         <a class="dropdown-item" routerLink="/AddEvenement">Ajouter</a>
       </div>
     </li>
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Candidat</a>
+
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/candidat">Lister</a>
+        <a class="dropdown-item" routerLink="/addCandidat">Ajouter</a>
+      </div>
+    </li>
   </ul>
 </nav>
+
+
 
 
 <router-outlet></router-outlet>

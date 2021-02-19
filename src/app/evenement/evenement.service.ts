@@ -1,4 +1,5 @@
-                                                                                                                                                   import { Injectable } from '@angular/core';
+
+import { Injectable } from '@angular/core';
 import {Evenement} from '../model/evenement.model';
 import {Observable} from 'rxjs/';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
@@ -17,7 +18,8 @@ export class EvenementService {
   apiURL: string = 'http://localhost:8080/evenement';
   apiURL2 : string = 'http://localhost:8080/evenement/delete';
   apiURL3: string = 'http://localhost:8080/evenements';
-  apiURL4 : string = 'http://localhost:8080/evenements/participant'
+  apiURL4 : string = 'http://localhost:8080/evenements/participant';
+ 
 
 
 
@@ -29,24 +31,23 @@ export class EvenementService {
    /*  listeEvenement() {
     return this.http.get(this.apiURL);
   } */
-   /* listeEvenement(): Observable<Evenement[]> {
-    return this.http.get<Evenement[]>(this.apiURL);
-  } */
+  //  listeEvenement(): Observable<Evenement[]> {
+  //   return this.http.get<Evenement[]>(this.apiURL);
+  // }
 
- numberParticipant(): Observable<Evenement[]>{
+numberParticipant(): Observable<Evenement[]>{
     return this.http.get<Evenement[]>(this.apiURL4);
   }
-
 
 supprimerEvenement(evenementId: number){
      const url = `${this.apiURL2}/${evenementId}`;
      return this.http.delete(url, httpOptions);
-
     }
- ajouterEvenement(event: Evenement):Observable<Evenement>{
+
+ajouterEvenement(event: Evenement):Observable<Evenement>{
       return this.http.post<Evenement>(this.apiURL3, event, httpOptions);
  }
- consulterEvenement (id: number): Observable<Evenement> {
+consulterEvenement (id: number): Observable<Evenement> {
   const url = `${this.apiURL}/${id}`;
   return this.http.get<Evenement>(url);
 }
