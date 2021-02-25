@@ -1,16 +1,35 @@
 <p></p>
-<div class= "container-fluid">
+<div class= "container">
   <div class="card  shadow mb-4 ">
+
     <div class="card-body">
+
+
+      <!--table critere-->
       <table class="table table-striped">
+        <thead>
+          <tr class="text-lg"> CRITERE DE L'EVENEMENT </tr>
+        </thead>
+        <tr>
+          <th>Libelle</th>
+          <th>Bareme</th>
+        </tr>
+            <tbody *ngFor = "let critere of criteres">
+              <tr>
+                <td>{{critere.critere_libelle}}</td>
+                <td>{{critere.critere_bareme}}</td>
+              </tr>
+            </tbody>
+      </table>
+
+      <table class="table table-striped mt-5">
         <tr>
           <th> Id</th>
           <th>Nom</th>
           <th>Prenom</th>
           <th>evenement_id</th>
           <th> Photo</th>
-          <th></th>
-          <th>Action</th>
+           <th>Action</th>
         </tr>
             <tbody *ngFor = "let candid of candidat">
               <tr>
@@ -22,8 +41,7 @@
                 <td> <img width="150" [src]="imageSrc(candid.candidat_photo)" alt=""> </td>
                  <!-- <td> <img width="100" [src]="'data:image/png;base64,' + candid.candidat_photo" alt=""> </td> -->
 
-
-                <td><a class="btn btn-success" [routerLink]="['/voter',candid.event_id]">Voter</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/criteres',candid.event_id]">Criteres de Vote</a></td>
               </tr>
             </tbody>
       </table>

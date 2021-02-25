@@ -17,7 +17,6 @@ export class AddCandidatComponent implements OnInit {
   evenement : Evenement []= [];
 
   constructor(private candidatService: CandidatService, private router: Router,  private evenementService: EvenementService) {
-
   }
 
   ngOnInit(): void {
@@ -26,7 +25,6 @@ export class AddCandidatComponent implements OnInit {
       console.log('array', prods);
        this.evenement = prods;
      });
-
 
   }
   addCandidat(){

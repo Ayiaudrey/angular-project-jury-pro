@@ -1,0 +1,41 @@
+<p></p>
+<div class= "container">
+  <div class="card  shadow mb-4 ">
+    <div class="card-body">
+
+
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Taille</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Note du critere" aria-label="Note du critere" aria-describedby="basic-addon1">
+      </div>
+
+
+      <table class="table table-striped">
+        <tr>
+          <th>Evenement_id</th>
+          <th>libelle</th>
+          <th>candidat_photo</th>
+
+
+          <th>Action</th>
+        </tr>
+            <tbody *ngFor = "let candid of criteres">
+              <tr>
+                <td>{{candid.even_id}}</td>
+                <td >{{candid.critere_libelle}}</td>
+                <!-- <td >{{candid.candidat_photo}}</td> -->
+
+
+                 <!-- <td> <img width="100" [src]="'data:image/png;base64,' + candid.candidat_photo" alt=""> </td> -->
+
+                 <!-- <td><a class="btn btn-danger" (click)="supprimerCriteres(candid)">Supprimer</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/updateCandidat',candid.critere_id]">Modifier</a></td> -->
+              </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>

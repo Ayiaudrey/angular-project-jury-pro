@@ -11,7 +11,7 @@ import { CandidatService } from '../candidat.service';
 })
 export class UpdateCandidatComponent implements OnInit {
 
-  currentCandidat = new Candidat();
+currentCandidat = new Candidat();
   id: any | undefined;
   imgUrl: any;
   newCandidat: any;
@@ -24,11 +24,14 @@ export class UpdateCandidatComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.candidatService.consulterCandidat(this.id).subscribe(
+    this.candidatService.consulterCandidat(this.activatedRoute.snapshot.params.candidat_id).subscribe(
       event =>{
+        console.log(event);
         this.currentCandidat = event;
+
         this.imgUrl = this.imageSrc(this.currentCandidat.candidat_photo)} );
-  }
+        // console.log('candid '+ JSON.stringify(candid));
+      }
 
   updateCandidat() {
     console.log(this.currentCandidat);
@@ -71,10 +74,8 @@ onImageSelected(aud : any) {
     }
 
     //attribution de notre byte array ainsi obtenu à notre variable evenement_photo
-    this.newCandidat.candidat_photo = data;
+    this.currentCandidat.candidat_photo =data;
   };
-
-
   // utilsation du reader
   reader.readAsDataURL(imageFile);
 

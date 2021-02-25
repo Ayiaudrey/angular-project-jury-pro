@@ -10,6 +10,8 @@ import { CandidatComponent } from './CandidatD/Candidat/candidat.component';
 import { AddCandidatComponent } from './CandidatD/add-candidat/add-candidat.component';
 import { UpdateCandidatComponent } from './CandidatD/update-candidat/update-candidat.component';
 import { VoterComponent } from './voter/voter.component';
+import { CriteresComponent } from './Criteres/criteres/criteres.component';
+import { AddCriteresComponent } from './Criteres/add-criteres/add-criteres.component';
 
 
 const routes: Routes = [
@@ -20,13 +22,14 @@ const routes: Routes = [
   {path : "updateCandidat/:candidat_id", component : UpdateCandidatComponent},
   {path : "addCandidat", component : AddCandidatComponent},
   {path : "voter/:evenementId", component : VoterComponent},
+  {path : "criteres/:evenementId", component : CriteresComponent},
+  {path : "addCriteres", component : AddCriteresComponent},
 
   { path: 'connexion', component: ConnexionComponent },
   { path: 'admin', component: AdminComponent },
  { path: 'admin',loadChildren: () => import ('./admin/admin.module').then(m => m.AdminModule)},
  { path: '', component: ConnexionComponent},
  { path: '', pathMatch: 'full', redirectTo: 'connexion'},
-
 ];
 
 @NgModule({

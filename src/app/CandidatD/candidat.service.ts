@@ -3,7 +3,6 @@ import {Observable} from 'rxjs/';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Candidat} from '../model/candidat.model';
 import { Injectable } from '@angular/core';
-import { Evenement } from '../model/evenement.model';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type':'application/json'})
@@ -19,7 +18,7 @@ export class CandidatService {
   apiURL5 : string= 'http://localhost:8080/candidats/event';
 
 candidat:  Candidat []= [];
-evenement: Evenement []= [];
+
 
   constructor(private http: HttpClient) {
 
@@ -44,8 +43,7 @@ supprimerCandidat(candidat_id: number){
   return this.http.get<Candidat>(url);
 }
 
-updateCandidat(candid :Candidat) : Observable<Candidat>
-    {
+updateCandidat(candid :Candidat) : Observable<Candidat>{
     return this.http.post<Candidat>(this.apiURL3, candid, httpOptions);
     }
 

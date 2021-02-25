@@ -1,4 +1,5 @@
 export class Candidat {
+  
   candidat_id: number | undefined;
   candidat_nom : string| undefined ;
   candidat_prenom : string | undefined;

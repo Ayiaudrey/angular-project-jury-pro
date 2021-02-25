@@ -12,7 +12,6 @@
           <th>Telephone</th>
           <th>Code</th>
           <th>  Photo</th>
-          <th></th>
           <th>Action</th>
         </tr>
             <tbody *ngFor = "let candid of candidat">
@@ -29,7 +28,7 @@
                  <!-- <td> <img width="100" [src]="'data:image/png;base64,' + candid.candidat_photo" alt=""> </td> -->
 
                  <td><a class="btn btn-danger" (click)="supprimerCandidat(candid)">Supprimer</a></td>
-                <td><a class="btn btn-success" [routerLink]="['/updateCandidat',candid.event_id]">Modifier</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/updateCandidat',candid.candidat_id]">Modifier</a></td>
               </tr>
             </tbody>
       </table>

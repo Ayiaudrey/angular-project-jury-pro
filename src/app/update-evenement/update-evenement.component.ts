@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EvenementService } from '../evenement/evenement.service';
 import { Evenement } from '../model/evenement.model';
 import { ActivatedRoute,Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -10,12 +9,15 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   templateUrl: './update-evenement.component.html',
   styles: [
   ]
+
 })
 export class UpdateEvenementComponent implements OnInit {
+
   currentEvenement = new Evenement();
   id: any | undefined;
   imgUrl: any;
   newEvenement: any;
+
   constructor(private activatedRoute: ActivatedRoute, private router :Router, private evenementService: EvenementService, private sanitizer:DomSanitizer) {
    activatedRoute.params.subscribe(x => {
       console.log('url', x);
@@ -25,9 +27,10 @@ export class UpdateEvenementComponent implements OnInit {
 
   ngOnInit() {
      //console.log('url', this.currentEvenement);
-    this.evenementService.consulterEvenement(this.id).subscribe(
+    this.evenementService.consulterEvenement(this.activatedRoute.snapshot.params.evenementId).subscribe(
       event =>{
         this.currentEvenement = event;
+
         this.imgUrl = this.imageSrc(this.currentEvenement.evenement_photo)} );
   }
 
@@ -86,9 +89,9 @@ onImageSelected(aud : any) {
     }
 
     //attribution de notre byte array ainsi obtenu à notre variable evenement_photo
-    this.newEvenement.evenement_photo = data;
+    this.currentEvenement.evenement_photo =data;
+    // this.newEvenement.evenement_photo = data;
   };
-
 
   // utilsation du reader
   reader.readAsDataURL(imageFile);

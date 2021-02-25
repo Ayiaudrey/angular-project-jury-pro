@@ -41,7 +41,7 @@ base64 : SafeUrl []= [];
            window.location.reload();
      });
   }
- 
+
 
 
   imageSrc(img:string) :SafeUrl{

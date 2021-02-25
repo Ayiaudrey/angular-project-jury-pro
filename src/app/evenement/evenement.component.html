@@ -3,8 +3,9 @@
   <div class="card shadow mb-4">
 
     <div class="card-body">
+      <i class="far fa-star"></i>
 
-    <div class="card-body"  *ngFor = "let event of evenement" style="display: inline-block;">
+    <div class="card-body"  *ngFor = "let event of evenement " style="display: inline-block;">
       <div class="card-body">
       <td> <img width="200" [src]="imageSrc(event.evenement_photo)" alt=""> </td>
     </div>
@@ -19,7 +20,6 @@
     <td><a class="btn btn-danger" (click)="supprimerEvenement(event)">Supprimer </a></td>
     <td><a class="btn btn-success" [routerLink]="['/updateEvenement',event.evenement_id]">Modifier</a></td>
     <td><a class="btn btn-info" [routerLink]="['/voter', event.evenement_id]">Voter</a></td>
-
   </div>
 
 </div>

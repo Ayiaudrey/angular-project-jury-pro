@@ -13,6 +13,9 @@ import { CandidatComponent } from './CandidatD/Candidat/candidat.component';
 import { AddCandidatComponent } from './CandidatD/add-candidat/add-candidat.component';
 import { UpdateCandidatComponent } from './CandidatD/update-candidat/update-candidat.component';
 import { VoterComponent } from './voter/voter.component';
+import { AddCriteresComponent } from './Criteres/add-criteres/add-criteres.component';
+import { UpdateCriteresComponent } from './Criteres/update-criteres/update-criteres.component';
+import { CriteresComponent } from './Criteres/criteres/criteres.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { VoterComponent } from './voter/voter.component';
     AddCandidatComponent,
     UpdateCandidatComponent,
     VoterComponent,
+    CriteresComponent,
+    AddCriteresComponent,
+    UpdateCriteresComponent,
     // AdminComponent
   ],
   imports: [
