@@ -16,6 +16,11 @@ import { VoterComponent } from './voter/voter.component';
 import { AddCriteresComponent } from './Criteres/add-criteres/add-criteres.component';
 import { UpdateCriteresComponent } from './Criteres/update-criteres/update-criteres.component';
 import { CriteresComponent } from './Criteres/criteres/criteres.component';
+import { VoteCandOrGroupComponent } from './vote-cand-or-group/vote-cand-or-group.component';
+import { ListCritereComponent } from './list-critere/list-critere.component';
+import { RatingModule } from 'ng-starrating';
+import { JuryComponent } from './jury/jury.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,10 @@ import { CriteresComponent } from './Criteres/criteres/criteres.component';
     CriteresComponent,
     AddCriteresComponent,
     UpdateCriteresComponent,
+    VoteCandOrGroupComponent,
+    ListCritereComponent,
+    JuryComponent,
+    DashboardComponent,
     // AdminComponent
   ],
   imports: [
@@ -38,7 +47,8 @@ import { CriteresComponent } from './Criteres/criteres/criteres.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

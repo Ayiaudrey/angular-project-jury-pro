@@ -1,41 +1,35 @@
-<p></p>
-<div class= "container">
-  <div class="card  shadow mb-4 ">
-    <div class="card-body">
+<!-- class input  -->
 
 
+      <div class= "container-fluid">
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Taille</span>
+        <div class="card shadow mb-4" *ngFor = "let cand of candidat" >
+
+          <div class="card-body" style="display: inline-block;">
+            <div class="card-body">
+             <td> <img width="200" [src]="imageSrc(cand.candidat_photo)" alt=""> </td>
+            Nom et Prenom : {{cand.candidat_nom}} {{cand.candidat_prenom}}  <br/>
+          </div>
+
+          <div *ngFor = "let crit of criteres">
+
+            Bareme: {{crit.critere_bareme}} <br/>
+            <div>
+              <label>{{crit.critere_libelle}}</label>
+              <input type="text"/>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Commentaires</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+
+
+          <td><a class="btn btn-info" [routerLink]="['/voteCandOrGroup', cand.event_id]">Voter</a></td>
         </div>
-        <input type="text" class="form-control" placeholder="Note du critere" aria-label="Note du critere" aria-describedby="basic-addon1">
+
+      </div>
       </div>
 
-
-      <table class="table table-striped">
-        <tr>
-          <th>Evenement_id</th>
-          <th>libelle</th>
-          <th>candidat_photo</th>
-
-
-          <th>Action</th>
-        </tr>
-            <tbody *ngFor = "let candid of criteres">
-              <tr>
-                <td>{{candid.even_id}}</td>
-                <td >{{candid.critere_libelle}}</td>
-                <!-- <td >{{candid.candidat_photo}}</td> -->
-
-
-                 <!-- <td> <img width="100" [src]="'data:image/png;base64,' + candid.candidat_photo" alt=""> </td> -->
-
-                 <!-- <td><a class="btn btn-danger" (click)="supprimerCriteres(candid)">Supprimer</a></td>
-                <td><a class="btn btn-success" [routerLink]="['/updateCandidat',candid.critere_id]">Modifier</a></td> -->
-              </tr>
-            </tbody>
-      </table>
-    </div>
-  </div>
-</div>

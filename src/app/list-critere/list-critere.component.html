@@ -1,0 +1,29 @@
+<div class= "container-fluid">
+  <div class="card  shadow mb-4 ">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+          <th> Id</th>
+          <th>Libelle </th>
+          <th>Bareme</th>
+          <th>Evenement_id</th>
+
+          <th>Action</th>
+        </tr>
+            <tbody *ngFor = "let listcrit of criteres">
+              <tr>
+                <td>{{listcrit.critere_id}}</td>
+                <td>{{listcrit.critere_libelle}}</td>
+                <td >{{listcrit.critere_bareme}}</td>
+                <td>{{listcrit.even_id}}</td>
+
+                 <!-- <td> <img width="100" [src]="'data:image/png;base64,' + candid.candidat_photo" alt=""> </td> -->
+
+                 <td><a class="btn btn-danger" (click)="supprimerCritere(listcrit)">Supprimer</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/updateCritere',listcrit.critere_id]">Modifier</a></td>
+              </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+</div>

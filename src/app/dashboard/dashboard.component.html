@@ -1,0 +1,112 @@
+<!--
+
+  Radio version of tabs.
+
+  Requirements:
+  - not rely on specific IDs for CSS (the CSS shouldn't need to know specific IDs)
+  - flexible for any number of unkown tabs [2-6]
+  - accessible
+
+  Caveats:
+  - since these are checkboxes the tabs not tab-able, need to use arrow keys
+
+  Also worth reading:
+  http://simplyaccessible.com/article/danger-aria-tabs/
+-->
+
+<div class="tabset">
+  <!-- Tab 1 -->
+  <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+  <label for="tab1">CANDIDAT</label>
+  <!-- Tab 2 -->
+  <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+  <label for="tab2">CRITERES</label>
+  <!-- Tab 3 -->
+  <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+  <label for="tab3">JURY</label>
+  <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+  <label for="tab3">RESULTAT DES VOTES</label>
+
+  <div class="tab-panels">
+    <section id="marzen" class="tab-panel">
+      <h2> CANDIDAT</h2>
+      <div class= "container">
+        <div class="card  shadow mb-4 ">
+
+          <div class="card-body">
+
+            <table class="table table-striped mt-5">
+              <tr>
+                <th> Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>evenement_id</th>
+                <th> Photo</th>
+                 <th>Action</th>
+              </tr>
+                  <tbody *ngFor = "let candid of candidat">
+                    <tr>
+                      <td>{{candid.candidat_id}}</td>
+                      <td>{{candid.candidat_nom}}</td>
+                      <td >{{candid.candidat_prenom}}</td>
+                      <td>{{candid.event_id}}</td>
+
+                      <td> <img width="150" [src]="imageSrc(candid.candidat_photo)" alt=""> </td>
+                       <!-- <td> <img width="100" [src]="'data:image/png;base64,' + candid.candidat_photo" alt=""> </td> -->
+
+                      <td><a class="btn btn-success" [routerLink]="['/criteres',candid.event_id]">Criteres de Vote</a></td>
+                    </tr>
+                  </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+    <section id="rauchbier" class="tab-panel">
+      <h2> CRITERES</h2>
+      <div class= "container">
+        <div class="card  shadow mb-4 ">
+
+          <div class="card-body">
+
+
+            <!--table critere-->
+            <table class="table table-striped">
+              <thead>
+                <tr class="text-lg"> CRITERE DE L'EVENEMENT </tr>
+              </thead>
+              <tr>
+                <th>Libelle</th>
+                <th>Bareme</th>
+              </tr>
+                  <tbody *ngFor = "let critere of criteres">
+                    <tr>
+                      <td>{{critere.critere_libelle}}</td>
+                      <td>{{critere.critere_bareme}}</td>
+                    </tr>
+                  </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section id="dunkles" class="tab-panel">
+      <h2>JURY</h2>
+
+    </section>
+
+    <section id="dunkles" class="tab-panel">
+      <h2>RESULTAT DES VOTES</h2>
+
+    </section>
+  </div>
+
+</div>
+
+
+

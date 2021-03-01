@@ -12,6 +12,9 @@ import { UpdateCandidatComponent } from './CandidatD/update-candidat/update-cand
 import { VoterComponent } from './voter/voter.component';
 import { CriteresComponent } from './Criteres/criteres/criteres.component';
 import { AddCriteresComponent } from './Criteres/add-criteres/add-criteres.component';
+import { ListCritereComponent } from './list-critere/list-critere.component';
+import { JuryComponent } from './jury/jury.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -24,6 +27,9 @@ const routes: Routes = [
   {path : "voter/:evenementId", component : VoterComponent},
   {path : "criteres/:evenementId", component : CriteresComponent},
   {path : "addCriteres", component : AddCriteresComponent},
+  {path : "listCritere", component : ListCritereComponent},
+  {path : "jury", component : JuryComponent},
+  {path : "dashboard/:evenementId", component : DashboardComponent},
 
   { path: 'connexion', component: ConnexionComponent },
   { path: 'admin', component: AdminComponent },
@@ -34,6 +40,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
+

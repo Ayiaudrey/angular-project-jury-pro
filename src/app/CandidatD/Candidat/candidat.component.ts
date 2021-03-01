@@ -26,9 +26,7 @@ base64 : SafeUrl []= [];
       console.log(candid);
       this.candidat = candid;
       });
-
      }
-
 
   supprimerCandidat(candid: any){
     let conf = confirm("Etes-vous sûr ?");

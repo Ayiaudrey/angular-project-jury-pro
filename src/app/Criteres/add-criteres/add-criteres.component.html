@@ -1,1 +1,37 @@
-<p>add-criteres works!</p>
+<!-- <p>add-evenement works!</p> -->
+<div class="container">
+  <div>
+    <h2>Ajouter un Critere : </h2>
+  </div>
+  <form >
+    <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Evenement</label>
+    <input type="number" [(ngModel)]= "newEvenement.evenement_id"
+          name="evenementId" class="form-control">
+     </div> -->
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Libelle</label>
+    <input type="text"[(ngModel)]= "newCritere.critere_libelle"
+    name="critere_libelle" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+      <label >Bareme</label>
+      <input type="text"[(ngModel)]= "newCritere.critere_bareme"
+      name="critere_bareme" class="form-control">
+      </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" >
+              <label >Nom Evenement</label>
+              <select [(ngModel)]= "newCritere.even_id" name="evenement_nom" class="form-control">
+              <option  *ngFor = "let candid of evenement" [value] = "candid.evenement_id"> {{candid.evenement_nom}}</option>
+            </select>
+              </div>
+
+    <div class="mt-2">
+       <button type="submit"  (click)="addCriteres()" class="btn btn-success">Ajouter</button>
+    </div>
+    <!-- <div class="mt-2">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+   </div> -->
+    </form>
+    </div>
+
