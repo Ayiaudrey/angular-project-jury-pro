@@ -21,6 +21,7 @@ import { ListCritereComponent } from './list-critere/list-critere.component';
 import { RatingModule } from 'ng-starrating';
 import { JuryComponent } from './jury/jury.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RatingModule
+    RatingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

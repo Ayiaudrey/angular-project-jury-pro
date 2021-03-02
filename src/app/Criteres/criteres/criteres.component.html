@@ -1,35 +1,43 @@
 <!-- class input  -->
 
 
-      <div class= "container-fluid">
+      <!-- <div class= "container-fluid">
+        <ngb-rating [(rate)]="currentRate" [max]="5"></ngb-rating>
+ <hr> -->
+<!-- <pre>Rate: <b>{{currentRate}}</b></pre> -->
 
-        <div class="card shadow mb-4" *ngFor = "let cand of candidat" >
+        <div class="card shadow mb-4" *ngFor = "let cand of candidat; let i = index" >
 
           <div class="card-body" style="display: inline-block;">
             <div class="card-body">
              <td> <img width="200" [src]="imageSrc(cand.candidat_photo)" alt=""> </td>
             Nom et Prenom : {{cand.candidat_nom}} {{cand.candidat_prenom}}  <br/>
-          </div>
 
-          <div *ngFor = "let crit of criteres">
-
-            Bareme: {{crit.critere_bareme}} <br/>
-            <div>
-              <label>{{crit.critere_libelle}}</label>
-              <input type="text"/>
-            </div>
           </div>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Commentaires</span>
             </div>
-            <textarea class="form-control" aria-label="With textarea"></textarea>
+            <textarea class="form-control" [(ngModel)]="commentaire[i]" aria-label="With textarea"></textarea>
+
+          </div>
+          <div *ngFor = "let crit of criteres">
+
+            Bareme: {{crit.critere_bareme}} <br/>
+            <div>
+              <label>{{crit.critere_libelle}}</label>
+              <!-- <input type="text"/> -->
+            </div>
+            <ngb-rating [rate]="0" [max]="5" [readonly] = "false" (rateChange) = "selectEtoileCandidat($event, crit, commentaire[i], cand)"></ngb-rating>
+
+            <hr>
           </div>
 
 
-          <td><a class="btn btn-info" [routerLink]="['/voteCandOrGroup', cand.event_id]">Voter</a></td>
+          <!-- <td><a class="btn btn-info" [routerLink]="['/voteCandOrGroup', cand.event_id]">Voter</a></td> -->
+          <td><a class="btn btn-info">Voter</a></td>
         </div>
 
       </div>
-      </div>
+
 

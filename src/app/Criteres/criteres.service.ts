@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Candidat } from '../model/candidat.model';
 import { Criteres } from '../model/criteres.model';
+import { VoteCandidat } from '../model/VoteCandidat.model';
 
 
 
@@ -20,6 +21,7 @@ export class CriteresService {
   apiURL5 : string= 'http://localhost:8080/candidats/event';
   apiURL2 : string = 'http://localhost:8080/critere/delete';
   apiURL3: string = 'http://localhost:8080/criteres';
+  apiURL4: string = 'http://localhost:8080/vote_candidats';
 
   criteres:  Criteres []= [];
 
@@ -50,6 +52,10 @@ export class CriteresService {
 
    ajouterCritere(candid: Criteres):Observable<Criteres>{
     return this.http.post<Criteres>(this.apiURL3, candid, httpOptions);
+}
+
+ajouterVote(vot :VoteCandidat): Observable<VoteCandidat>{
+return this.http.post<VoteCandidat>(this.apiURL4,vot,httpOptions);
 }
 }
 
